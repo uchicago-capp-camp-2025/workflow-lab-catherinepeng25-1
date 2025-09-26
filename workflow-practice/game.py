@@ -19,6 +19,7 @@ words = [
 
 
 def main():
+
     # guesses remaining (start with 6)
     guesses = 6
     # letters that have been revealed (all empty at first)
@@ -41,19 +42,24 @@ def main():
         # each round, ask for a letter, then check if it is in the word
         letter = input("Pick a letter: ")
 
+         # check if the letter is a letter 
+        if type(letter) != str:
+            exit()
+
         # update guesses and which letters have been seen
         guessed.add(letter)
         guesses -= 1
 
         # check word one letter at a time
         for index, word_letter in enumerate(word):
-            if letter == word_letter:
-                revealed[index] = leter
+            if letter == word:
+                revealed[index] = letter
 
         # if revealed is only letters, the player has won!
         if "_" not in revealed:
             print(f"{word}! You Win!")
             exit()
+
     print(f"\nSorry! The word was {word}")
 
 
