@@ -52,7 +52,7 @@ def main():
 
         # check word one letter at a time
         for index, word_letter in enumerate(word):
-            if letter == word:
+            if letter in word_letter:
                 revealed[index] = letter
 
         # if revealed is only letters, the player has won!
